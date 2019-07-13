@@ -128,7 +128,7 @@ func (wst *WebsocketTransport) HandleConnection(
 		return nil, ErrorHttpUpgradeFailed
 	}
 	vars := mux.Vars(r)
-	fmt.Println(vars)
+	fmt.Println(vars, r.URL)
 	return &WebsocketConnection{socket, wst, vars}, nil
 }
 
