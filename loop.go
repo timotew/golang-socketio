@@ -74,7 +74,7 @@ func (c *Channel) Id() string {
 /**
 Get a query parameter from the client connection url
  */
-func (c *Channel) GetParam(p string) (string, error) {
+func (c *Channel) GetParam(p string) (string) {
 	return c.conn.GetQueryParam(p)
 }
 /**
