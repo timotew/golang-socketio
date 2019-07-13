@@ -30,9 +30,9 @@ type Connection interface {
 	PingParams() (interval, timeout time.Duration)
 
     /**
-    Get connectin query parameter
+    Get connection query parameter
      */
-	GetQueryParam(param string) (p string, err error)
+	GetQueryParam(param string) (p string)
 }
 
 /**
