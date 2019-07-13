@@ -28,6 +28,11 @@ type Connection interface {
 	Get ping time interval and ping request timeout
 	*/
 	PingParams() (interval, timeout time.Duration)
+
+    /**
+    Get connectin query parameter
+     */
+	GetQueryParam(param string) (p string, err error)
 }
 
 /**

@@ -7,8 +7,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/graarh/golang-socketio/protocol"
-	"github.com/graarh/golang-socketio/transport"
+	"github.com/timotew/golang-socketio/protocol"
+	"github.com/timotew/golang-socketio/transport"
 	"math/rand"
 	"net/http"
 	"sync"
@@ -339,7 +339,6 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		return
 	}
-
 	s.SetupEventLoop(conn, r.RemoteAddr, r.Header)
 	s.tr.Serve(w, r)
 }

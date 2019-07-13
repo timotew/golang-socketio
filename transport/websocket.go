@@ -2,6 +2,8 @@ package transport
 
 import (
 	"errors"
+	"fmt"
+	"github.com/gorilla/mux"
 	"github.com/gorilla/websocket"
 	"io/ioutil"
 	"net/http"
@@ -29,6 +31,7 @@ var (
 type WebsocketConnection struct {
 	socket    *websocket.Conn
 	transport *WebsocketTransport
+	query map[string]string
 }
 
 func (wsc *WebsocketConnection) GetMessage() (message string, err error) {
@@ -55,6 +58,15 @@ func (wsc *WebsocketConnection) GetMessage() (message string, err error) {
 	}
 
 	return text, nil
+}
+
+func (wsc *WebsocketConnection) GetQueryParam(param string) (p string, err error) {
+	ok := false
+	p, ok = wsc.query[param]
+	if !ok {
+		err = fmt.Errorf("query parameter '%s' not found", param)
+	}
+	return
 }
 
 func (wsc *WebsocketConnection) WriteMessage(message string) error {
@@ -99,7 +111,7 @@ func (wst *WebsocketTransport) Connect(url string) (conn Connection, err error) 
 		return nil, err
 	}
 
-	return &WebsocketConnection{socket, wst}, nil
+	return &WebsocketConnection{socket, wst, map[string]string{}}, nil
 }
 
 func (wst *WebsocketTransport) HandleConnection(
@@ -115,8 +127,8 @@ func (wst *WebsocketTransport) HandleConnection(
 		http.Error(w, upgradeFailed+err.Error(), 503)
 		return nil, ErrorHttpUpgradeFailed
 	}
-
-	return &WebsocketConnection{socket, wst}, nil
+	vars := mux.Vars(r)
+	return &WebsocketConnection{socket, wst, vars}, nil
 }
 
 /**

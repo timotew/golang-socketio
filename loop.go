@@ -3,8 +3,8 @@ package gosocketio
 import (
 	"encoding/json"
 	"errors"
-	"github.com/graarh/golang-socketio/protocol"
-	"github.com/graarh/golang-socketio/transport"
+	"github.com/timotew/golang-socketio/protocol"
+	"github.com/timotew/golang-socketio/transport"
 	"net/http"
 	"sync"
 	"time"
@@ -51,6 +51,7 @@ type Channel struct {
 	server        *Server
 	ip            string
 	requestHeader http.Header
+	queries *map[string]string
 }
 
 /**
@@ -70,6 +71,12 @@ func (c *Channel) Id() string {
 	return c.header.Sid
 }
 
+/**
+Get a query parameter from the client connection url
+ */
+func (c *Channel) GetParam(p string) (string, error) {
+	return c.conn.GetQueryParam(p)
+}
 /**
 Checks that Channel is still alive
 */
