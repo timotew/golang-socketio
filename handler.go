@@ -34,6 +34,7 @@ create messageHandlers map
 */
 func (m *methods) initMethods() {
 	m.messageHandlers = make(map[string]*caller)
+	// TODO: Tim- do redis connection here
 }
 
 /**

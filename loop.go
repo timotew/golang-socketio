@@ -77,6 +77,7 @@ Get a query parameter from the client connection url
 func (c *Channel) GetParam(p string) (string) {
 	return c.conn.GetQueryParam(p)
 }
+
 /**
 Checks that Channel is still alive
 */

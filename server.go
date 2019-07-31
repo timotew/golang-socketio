@@ -252,7 +252,7 @@ On connection system handler, store sid
 func onConnectStore(c *Channel) {
 	c.server.sidsLock.Lock()
 	defer c.server.sidsLock.Unlock()
-
+//TODO: TIm -  save ID to redis here
 	c.server.sids[c.Id()] = c
 }
 
@@ -308,7 +308,7 @@ func (s *Server) SetupEventLoop(conn transport.Connection, remoteAddr string,
 
 	interval, timeout := conn.PingParams()
 	hdr := Header{
-		Sid:          generateNewId(remoteAddr),
+		Sid:          conn.GetUserId(),
 		Upgrades:     []string{},
 		PingInterval: int(interval / time.Millisecond),
 		PingTimeout:  int(timeout / time.Millisecond),

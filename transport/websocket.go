@@ -31,6 +31,7 @@ type WebsocketConnection struct {
 	socket    *websocket.Conn
 	transport *WebsocketTransport
 	query url.Values
+	userID, userGroups, userPhone, gatewayId, requestId string
 }
 
 func (wsc *WebsocketConnection) GetMessage() (message string, err error) {
@@ -57,6 +58,18 @@ func (wsc *WebsocketConnection) GetMessage() (message string, err error) {
 	}
 
 	return text, nil
+}
+
+func (wsc *WebsocketConnection) GetUserId() string {
+	return wsc.userID
+}
+
+func (wsc *WebsocketConnection) GetUserGroups() string {
+	return wsc.userGroups
+}
+
+func (wsc *WebsocketConnection) GetUserRequestId() string {
+	return wsc.requestId
 }
 
 func (wsc *WebsocketConnection) GetQueryParam(param string) (p string) {
@@ -106,7 +119,7 @@ func (wst *WebsocketTransport) Connect(url string) (conn Connection, err error) 
 		return nil, err
 	}
 
-	return &WebsocketConnection{socket, wst, nil}, nil
+	return &WebsocketConnection{socket, wst, nil, "", "", "", "", ""}, nil
 }
 
 func (wst *WebsocketTransport) HandleConnection(
@@ -123,7 +136,7 @@ func (wst *WebsocketTransport) HandleConnection(
 		return nil, ErrorHttpUpgradeFailed
 	}
 	vars := r.URL.Query()
-	return &WebsocketConnection{socket, wst, vars}, nil
+	return &WebsocketConnection{socket, wst, vars, r.Header.Get("X-Consumer-Custom-ID"),r.Header.Get("Kong-Request-ID"), r.Header.Get("X-Consumer-Groups"),r.Header.Get("X-Consumer-Username"), r.Header.Get("X-Consumer-ID") }, nil
 }
 
 /**

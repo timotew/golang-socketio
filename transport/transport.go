@@ -33,6 +33,21 @@ type Connection interface {
     Get connection query parameter
      */
 	GetQueryParam(param string) (p string)
+
+	/**
+	  Get user id
+	*/
+	GetUserId() (id string)
+
+	/**
+	  Get user groups
+	*/
+	GetUserGroups() (groups string)
+
+	/**
+	  Get user request ID
+	*/
+	GetUserRequestId() (reqId string)
 }
 
 /**
