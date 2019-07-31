@@ -51,6 +51,13 @@ func (c *Channel) Close() {
 }
 
 /**
+Get use group
+*/
+func (c *Channel) Groups() string {
+	return c.conn.GetUserGroups()
+}
+
+/**
 Get ip of socket client
 */
 func (c *Channel) Ip() string {

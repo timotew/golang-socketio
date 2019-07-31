@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b2cab68-d3e8-4b2b-b25e-e021afb7e710" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loop.go" beforeDir="false" afterPath="$PROJECT_DIR$/loop.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transport/transport.go" beforeDir="false" afterPath="$PROJECT_DIR$/transport/transport.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transport/websocket.go" beforeDir="false" afterPath="$PROJECT_DIR$/transport/websocket.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="310" column="38" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
+            <state relative-caret-position="399">
+              <caret line="61" column="2" lean-forward="true" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
               <folding>
                 <element signature="e#20#242#0" expanded="true" />
               </folding>
@@ -60,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/transport/transport.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
-              <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
               <folding>
                 <element signature="e#19#49#0" expanded="true" />
               </folding>
@@ -72,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/transport/websocket.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1260">
-              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+              <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
               <folding>
                 <element signature="e#19#115#0" expanded="true" />
               </folding>
@@ -181,16 +177,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="52" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16453674" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16453674" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="LuaCheck" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.23762377" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.23762377" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="4" visible="true" weight="0.0980198" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.0980198" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.32876712" />
@@ -285,7 +280,7 @@
     <entry file="file://$PROJECT_DIR$/transport/transport.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
-          <caret line="43" column="6" lean-forward="true" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
           <folding>
             <element signature="e#19#49#0" expanded="true" />
           </folding>
@@ -295,7 +290,7 @@
     <entry file="file://$PROJECT_DIR$/transport/websocket.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+          <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
           <folding>
             <element signature="e#19#115#0" expanded="true" />
           </folding>
@@ -335,8 +330,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="310" column="38" selection-start-line="310" selection-start-column="38" selection-end-line="310" selection-end-column="38" />
+        <state relative-caret-position="399">
+          <caret line="61" column="2" lean-forward="true" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
           <folding>
             <element signature="e#20#242#0" expanded="true" />
           </folding>
