@@ -349,9 +349,10 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if _, err := s.GetChannel(conn.GetUserId()); err == nil {
-		log.Printf("SocketIO: user: %s is already connected", conn.GetUserId())
-		return
+	if ch, err := s.GetChannel(conn.GetUserId()); err == nil {
+		ch.Close()
+		h, err := s.GetChannel(conn.GetUserId());
+		log.Printf("SocketIO: user: %s is already connected the chanell now is %v err %v", conn.GetUserId(), h, err)
 	}
 
 	s.SetupEventLoop(conn, r.RemoteAddr, r.Header)
