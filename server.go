@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"github.com/timotew/golang-socketio/protocol"
 	"github.com/timotew/golang-socketio/transport"
+	"log"
 	"math/rand"
 	"net/http"
 	"sync"
@@ -343,9 +344,16 @@ implements ServeHTTP function from http.Handler
 */
 func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	conn, err := s.tr.HandleConnection(w, r)
+
 	if err != nil {
 		return
 	}
+
+	if _, err := s.GetChannel(conn.GetUserId()); err == nil {
+		log.Printf("SocketIO: user: %s is already connected", conn.GetUserId())
+		return
+	}
+
 	s.SetupEventLoop(conn, r.RemoteAddr, r.Header)
 	s.tr.Serve(w, r)
 }
