@@ -136,7 +136,8 @@ func (wst *WebsocketTransport) HandleConnection(
 		return nil, ErrorHttpUpgradeFailed
 	}
 	vars := r.URL.Query()
-	return &WebsocketConnection{socket, wst, vars, r.Header.Get("X-Consumer-Custom-ID"),r.Header.Get("Kong-Request-ID"), r.Header.Get("X-Consumer-Groups"),r.Header.Get("X-Consumer-Username"), r.Header.Get("X-Consumer-ID") }, nil
+
+	return &WebsocketConnection{socket, wst, vars, r.Header.Get("X-Consumer-Custom-ID"),r.Header.Get("X-Consumer-Groups"), r.Header.Get("X-Consumer-Username"),r.Header.Get("X-Consumer-ID"),r.Header.Get("Kong-Request-ID") }, nil
 }
 
 /**
